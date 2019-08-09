@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -51,6 +52,30 @@ long long MaxPairwiseProductFast(const vector<int>& numbers) {
 }
 
 int main() {
+
+    // this is a stress test --> this program is designed to auto generate code to check if the code will run under condition
+    while(true){
+      int n = rand() % 10 + 2;        // this pulls in rand()(Random number function provided by #include <cstdlid>) and then gives a number of 0-9 (% 10) then adds 2 (+ 2) with gives 2-11, after it then assigns a variable n
+      cout << n << "\n";              // outputs n
+      vector<int> a;                  // starts an array and assigns it to variable a
+      for(int i = 0; i < n; ++i){     // creates a loop for the array
+        a.push_back(rand() % 100000); // creates another random number then this give a number between 0 and 9999 then pushes it to the array (a)
+      }
+      for(int i = 0; i < n; ++i){
+        cout << a[i] << " ";          // prints out array elements
+      }
+      cout << "\n";
+      long long res1 = MaxPairwiseProductFast(a); // brings in MaxPairwiseProductFast() function passes in the array (a) and assigns it to res1
+      long long res2 = MaxPairwiseProductFast(a); // brings in MaxPairwiseProductFast() function passes in the array (a) and assigns it to res2
+      if( res1 != res2 ){                         // this conditional compares the two arrays (res1 and res2) for equality
+        cout << "Wrong answer: " << res1 << ' ' << res2 << "\n"; // prints out comparision results
+        break;                                                   // this breaks out of the while loop (infinite loop)
+      }
+      else {
+        cout << "Ok\n";   //this prints if both res1 and res2 are equal and loop continues
+      }
+    }
+
     // int n; // assigning an empty variable to n
     // cin >> n; // user input for a number for the empty variable
     // vector<int> numbers(n); // creating an array with the name numbers and passing in the the user number
