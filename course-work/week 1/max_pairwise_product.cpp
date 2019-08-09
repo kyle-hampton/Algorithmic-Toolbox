@@ -6,23 +6,23 @@ using std::vector;
 using std::cin;
 using std::cout;
 
-// version 1 of the solution (this has a slow runtime)
-long long MaxPairwiseProduct(const vector<int>& numbers) {
-    long long output = 0;
-    int n = numbers.size();
-
-    for (int first = 0; first < n; ++first) {
-        for (int second = first + 1; second < n; ++second) { //
-          if(((long long)numbers[first]) * numbers[second] > output){
-
-            output = ((long long)numbers[first])  * numbers[second];
-
-          }
-        }
-    }
-
-    return output;
-}
+// // version 1 of the solution (this has a slow runtime)
+// long long MaxPairwiseProduct(const vector<int>& numbers) {
+//     long long output = 0;
+//     int n = numbers.size();
+//
+//     for (int first = 0; first < n; ++first) {
+//         for (int second = first + 1; second < n; ++second) { //
+//           if(((long long)numbers[first]) * numbers[second] > output){
+//
+//             output = ((long long)numbers[first])  * numbers[second];
+//
+//           }
+//         }
+//     }
+//
+//     return output;
+// }
 
 
 // version 2 of the solution (fast runtime)
